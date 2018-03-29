@@ -1,0 +1,35 @@
+<% layout('layout') -%>
+
+<section id="page__index">
+
+
+
+<h1><%= title %></h1>
+<p>Bienvenido a  <%= title %></p>
+  <article>
+
+  <% results.forEach(result=>{%>
+  
+      <div class="card">
+        <img src="/images/anuncios/<%= result.foto%>" alt="">
+        <div class="card__info">
+          <div class="price"><p><%= result.precio %>€</p></div>
+          <div class="name"><p><%=result.nombre%></p></div>
+          <div class="tags">
+            <span>Tags: </span>
+            <%=result.tags%>
+          </div>
+          <div class="status text-center margin-top-small">
+            <% if (result.venta) {%>
+              <p class="text-primary">¡En venta!</p>
+            <%}else{%>
+            <p class="text-primary">¡Se busca!</p>
+              <%}%>
+          </div>
+        </div>
+      </div>
+    
+  <%})%>
+  </article>
+
+</section>

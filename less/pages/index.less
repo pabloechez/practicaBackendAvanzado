@@ -1,0 +1,47 @@
+#page__index{
+    article{
+        -webkit-column-width: 26em;
+        -moz-column-width: 26em;
+        column-width: 26em;
+        .column-gap(1.5em);
+
+        .card{
+            margin-bottom: 16px;
+            box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+            border-radius: 10px;
+            .background-white;
+            padding: 4px;
+            display: inline-block;
+            width: 100%;
+
+            img{
+                //height: 200px;
+                border-radius: 10px;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .card__info{
+                padding: 1rem;
+
+                .price p{
+                    .text-primary;
+                    .bold-font;
+                }
+
+                .name p{
+                    .font-size-small;
+                    margin-bottom: 1rem;
+                }
+
+                .tags{
+                    .calc(margin-left;"-1rem - 5px");
+                    border-top: 1px solid @light-grey;
+                    .font-size-small;
+                    .calc(width;"100% + 2rem + 10px");
+                    padding: 1.2rem 1.2rem 0;
+                }
+            }
+        }
+    }
+}
