@@ -1,0 +1,31 @@
+<% layout('layout') -%>
+
+<section id="page__login">
+
+
+  <h1><%= __('Login') %></h1>
+
+  <p><%= __('Please login to access') %></p>
+  <article>
+
+    <form  method="post">
+      <div class="fields">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" value="<%= email %>">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="field">
+         <button type="submit" class="button button-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    <p class="error"><%= error %></p>
+
+
+  </article>
+
+</section>

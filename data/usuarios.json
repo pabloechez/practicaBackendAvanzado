@@ -1,0 +1,10 @@
+{
+  "model": "Usuario",
+  "data": [
+    {
+      "name": "admin",
+      "email": "admin@example.com",
+      "password": "$2a$10$S17Z0YOD9wb199hKsVEOVekn394iQk78eqsl2L9X.yOKZcde9j/hm"
+    }
+  ]
+}

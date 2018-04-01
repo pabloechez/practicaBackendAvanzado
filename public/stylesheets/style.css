@@ -7835,6 +7835,29 @@ header {
   align-items: center;
   z-index: 99;
 }
+header .header__right {
+  margin-left: auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+header .header__right .login {
+  margin-right: 2rem;
+  font-size: 1.6rem;
+}
+header .header__right .header__langs {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  font-size: 1.6rem;
+}
+header .header__right .header__langs a {
+  margin-left: 1rem;
+}
 main {
   margin-top: 66px;
 }

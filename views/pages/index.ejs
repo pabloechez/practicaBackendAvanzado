@@ -2,10 +2,8 @@
 
 <section id="page__index">
 
-
-
 <h1><%= title %></h1>
-<p>Bienvenido a  <%= title %></p>
+<p><%= __('Welcome to')%>   <%= title %></p>
   <article>
 
   <% results.forEach(result=>{%>
@@ -21,9 +19,9 @@
           </div>
           <div class="status text-center margin-top-small">
             <% if (result.venta) {%>
-              <p class="text-primary">¡En venta!</p>
+              <p class="text-primary"><%= __('For sale') %></p>
             <%}else{%>
-            <p class="text-primary">¡Se busca!</p>
+            <p class="text-primary"><%= __('Searching') %></p>
               <%}%>
           </div>
         </div>

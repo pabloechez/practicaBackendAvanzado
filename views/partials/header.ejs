@@ -1,4 +1,18 @@
 <header class="header">
 
     <a href="/"><img src="/images/logo.svg" alt="Logo"></a>
+
+    <div class="header__right">
+        <a href="/login" class="login"><%= __('Login')%></a>
+
+        <div class="header__langs">
+            <% getLocales().forEach(lang=>{%>
+            <a href="/lang/<%= lang %>"><%= lang %></a>
+            <% })%>
+
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+
+
 </header>

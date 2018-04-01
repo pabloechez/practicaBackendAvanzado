@@ -6,10 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var engine = require('ejs-locals');
 
+const session = require('express-session');
+
 // conectamos la base de datos
 require('./lib/connectMongoose');
+
 // cargamos los modelos para que mongoose los conozca
 require('./models/Anuncio');
+require('./models/Usuario');
 
 var app = express();
 
@@ -29,17 +33,36 @@ app.use(cookieParser());
 //middleware de estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-/**
- * Middlewares de mi apliación web
- */
-app.use('/',      require('./routes/index'));
-app.use('/users', require('./routes/users'));
+//configurar multiidioma
+const i18n = require('./lib/i18nConfigure')();
+app.use(i18n.init);
 
 /**
  * Middlewares de mi api
  */
 app.use('/apiv1/anuncios', require('./routes/apiv1/anuncios'));
+
+//middleware de control de sessiones
+app.use(session({
+    name: 'nodepop-session',
+    secret: 'askjdahjdhakdhaskdas7dasd87asd89as7d89asd7a9s8dhjash',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 2 * 24 * 60 * 60 * 1000, httpOnly: true }, // dos dias de inactividad
+}));
+
+
+/**
+ * Middlewares de mi apliación web
+ */
+const loginController = require('./routes/loginController');
+app.post('/login', loginController.post);
+app.use('/login', loginController.index);
+app.use('/logout', loginController.logout);
+
+app.use('/',      require('./routes/index'));
+app.use('/lang',  require('./routes/lang'));
+app.use('/users', require('./routes/users'));
 
 
 // catch 404 and forward to error handler
