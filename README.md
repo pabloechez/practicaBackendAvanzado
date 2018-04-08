@@ -51,66 +51,68 @@ Enviamos por post los campos: nombre, venta, precio, foto y tags a /api/anuncios
 ## Peticiones a la API
 ----
 
+siempre enviar el token-> ?token=edgdwgdudugdedge_ejemploToken
+
 ### Listar los tags existentes
 
 ````
-/apiv1/anuncios/tags
+/api/anuncios/tags
 ````
 
 ### Filtrar por nombre
 
 ````
-/apiv1/anuncios?nombre=nombre_del_producto
+/api/anuncios?nombre=nombre_del_producto
 ````
 
 ### Filtrar por venta
 Valores true o false. Ejemplo:
 
 ````
-/apiv1/anuncios?venta=false
+/api/anuncios?venta=false
 ````
 
 ### Filtrar por tag:
 
 ````
-/apiv1/anuncios?tag=nombre_tag
+/api/anuncios?tag=nombre_tag
 ````
 
 ### Filtrar por precio:
 * Precio menor o igual. Ejemplo:
 
     ````
-    /apiv1/anuncios?precio=-50
+    /api/anuncios?precio=-50
     ````
 
 * Precio entre dos valores. Ejemplo:
 
     ````
-    /apiv1/anuncios?precio=20-300
+    /api/anuncios?precio=20-300
     ````
 
 * Precio mayor o igual. Ejemplo:
 
     ````
-    /apiv1/anuncios?precio=80-
+    /api/anuncios?precio=80-
     ````
 
 ### Ordernar
 
 * Orden ascendente
     ````
-    /apiv1/anuncios?sort=campo
+    /api/anuncios?sort=campo
     ````
 
 * Orden descendente
     ````
-    /apiv1/anuncios?sort=-campo
+    /api/anuncios?sort=-campo
     ````
 
 ### Paginación
 
 ````
-/apiv1/anuncios?start=numero&limit=numero
+/api/anuncios?start=numero&limit=numero
 ````
 
 
