@@ -5241,6 +5241,19 @@ fieldset legend {
   font-size: 1.6rem;
   color: #555;
 }
+.field {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.field input + p.error {
+  display: none;
+  position: absolute;
+  bottom: -1.8rem;
+  font-size: 1.2rem;
+}
+.field input.error + p.error {
+  display: block;
+}
 /*
  * Definitions
  */
@@ -7825,17 +7838,19 @@ header {
   border-bottom: 1px solid;
   border-color: rgba(236, 239, 241, 0.5);
   box-shadow: 0 2px 4px 0 rgba(37, 50, 56, 0.03);
-  height: 66px;
   padding: 0 8px 0 11px;
+  z-index: 99;
+}
+header .container {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
   align-items: center;
-  z-index: 99;
+  height: 66px;
 }
-header .header__right {
+header .container .header__right {
   margin-left: auto;
   display: -webkit-flex;
   display: -moz-flex;
@@ -7843,11 +7858,11 @@ header .header__right {
   display: -ms-flex;
   display: flex;
 }
-header .header__right .login {
-  margin-right: 2rem;
+header .container .header__right .menu a {
   font-size: 1.6rem;
+  margin-left: 1rem;
 }
-header .header__right .header__langs {
+header .container .header__right .header__langs {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
@@ -7855,11 +7870,19 @@ header .header__right .header__langs {
   display: flex;
   font-size: 1.6rem;
 }
-header .header__right .header__langs a {
+header .container .header__right .header__langs a {
   margin-left: 1rem;
 }
 main {
   margin-top: 66px;
+  min-height: calc(100vh - 15rem);
+  min-height: -moz-calc(100vh - 15rem);
+  min-height: -webkit-calc(100vh - 15rem);
+  min-height: -o-calc(100vh - 15rem);
+  padding-top: 5rem;
+}
+main form {
+  max-width: 50rem;
 }
 footer {
   background: #FFFFFF !important;
@@ -7869,9 +7892,9 @@ footer {
   height: 66px;
 }
 #page__index article {
-  -webkit-column-width: 26em;
-  -moz-column-width: 26em;
-  column-width: 26em;
+  -webkit-column-width: 18em;
+  -moz-column-width: 18em;
+  column-width: 18em;
   -webkit-column-gap: 1.5em;
   -moz-column-gap: 1.5em;
   column-gap: 1.5em;

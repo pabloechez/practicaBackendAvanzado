@@ -3,7 +3,20 @@
 	"For sale": "En venta",
 	"Searching": "En busca",
 	"Login": "Inicio sesión",
-	"Please login to access": "Please login to access",
-	"Admin": "Admin",
-	"Create ad": "Create ad"
+	"Please login to access": "Por favor iniciar sesión para continuar",
+	"Admin": "Administrar",
+	"Create ad": "Crear anuncio",
+	"Logout": "Salir",
+	"Tags": "Palabras",
+	"Name": "Nombre",
+	"Sale": "Venta",
+	"Yes": "Si",
+	"No": "No",
+	"Price": "Precio",
+	"Submit": "Enviar",
+	"comma separator": "Separado por comas",
+	"Password": "Contraseña",
+	"Required field": "Campo obligatorio",
+	"Enter a valid email": "Escribe un email válido",
+	"Wrong credentials": "Credenciales incorrectas"
 }

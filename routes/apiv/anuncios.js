@@ -8,6 +8,8 @@ const upload = require('../../lib/uploadConfig');
 const Jimp = require("jimp");
 const path = require('path');
 const cote = require('cote');
+const { check, validationResult } = require('express-validator/check');
+const { matchedData, sanitize } = require('express-validator/filter');
 
 
 router.get('/', async(req, res, next)=>{
@@ -84,7 +86,20 @@ router.get('/tags', async(req, res, next)=>{
       }   
 });
 
-router.post('/',  upload.single('imagen'), (req, res, next) => {
+
+const validateBody = [
+    check('nombre').isLength({ min: 1 }).exists().withMessage('Nombre obligatorio'),
+    check('precio').isLength({ min: 1 }).exists().matches('^[0-9]+$').withMessage('Obligatorio, sólo números'),
+    check('tags').isLength({ min: 1 }).exists().withMessage('Palabras obligatorio'),
+];
+
+router.post('/', upload.single('imagen'),...validateBody, (req, res, next) => {
+
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.mapped() });
+
+    }
 
     const data = req.body;
     console.log('upload:', req.file);
@@ -100,14 +115,12 @@ router.post('/',  upload.single('imagen'), (req, res, next) => {
 
     data.tags= req.body.tags.split(",");
 
-    //console.log(data);
     const anuncio = new Anuncio(data);
     anuncio.save((err, anuncioGuardado) => {
         if (err) {
             next(err);
             return;
         }
-        //res.json({ success: true, result: anuncioGuardado });
         res.redirect('/admin');
     });
 

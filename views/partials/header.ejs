@@ -1,18 +1,22 @@
 <header class="header">
+    <div class="container">
 
-    <a href="/"><img src="/images/logo.svg" alt="Logo"></a>
+        <a href="/"><img src="/images/logo.svg" alt="Logo"></a>
 
-    <div class="header__right">
-        <a href="/login" class="login"><%= __('Login')%></a>
+        <div class="header__right">
+            <div class="menu">
+                <a href="/login"><%= __('Login')%></a>
+                <a href="/admin"><%= __('Admin')%></a>
+                <a href="/logout"><%= __('Logout')%></a>
+            </div>
 
-        <div class="header__langs">
-            <% getLocales().forEach(lang=>{%>
-            <a href="/lang/<%= lang %>"><%= lang %></a>
-            <% })%>
 
-            <a href="/logout">Logout</a>
+            <div class="header__langs">
+                <% getLocales().forEach(lang=>{%>
+                <a href="/lang/<%= lang %>"><%= lang %></a>
+                <% })%>
+            </div>
         </div>
+
     </div>
-
-
 </header>

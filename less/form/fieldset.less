@@ -30,3 +30,23 @@ fieldset {
 		color: @fieldset-legend-color;
 	}
 }
+
+.field{
+	position: relative;
+	margin-bottom: 3rem;
+
+	input{
+		+p.error{
+			display: none;
+			position: absolute;
+			bottom: -1.8rem;
+			.font-size-xsmall;
+		}
+
+		&.error+p.error{
+			display: block;
+
+
+		}
+	}
+}

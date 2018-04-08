@@ -14,27 +14,30 @@
           <input type="file" name="imagen" id="imagen" required>
         </div>
         <div class="field">
-          <label for="text">Nombre</label>
-          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+          <label for="text"><%= __('Name') %></label>
+          <input type="text" name="nombre" id="nombre" placeholder="<%= __('Name') %>" required>
+            <p class="error text-error"><%= __('Required field') %></p>
         </div>
         <div class="field">
-          <label for="venta">Venta</label>
-          <span>Si</span>
+          <label for="venta"><%= __('Sale') %></label>
+          <span><%= __('Yes') %></span>
           <input type="radio" name="venta" id="venta" placeholder="Venta"  value="1" checked>
-          <span>No</span>
+          <span><%= __('No') %></span>
           <input type="radio" name="venta" id="venta1" placeholder="Venta"  value="0">
         </div>
         <div class="field">
-          <label for="text">Precio</label>
-          <input type="text" name="precio" id="precio" placeholder="Precio" required>
+          <label for="text"><%= __('Price') %></label>
+          <input type="text" name="precio" id="precio" placeholder="<%= __('Price') %>" required>
+            <p class="error text-error"><%= __('Required field') %></p>
         </div>
         <div class="field">
-          <label for="text">Tags <span class="font-size-xsmall">(separado por comas)</span></label>
-          <input type="text" name="tags" id="tags" placeholder="Tags"  required>
+          <label for="text"><%= __('Tags') %> <span class="font-size-xsmall">(<%= __('comma separator') %>)</span></label>
+          <input type="text" name="tags" id="tags" placeholder="<%= __('Tags') %>"  required>
+            <p class="error text-error"><%= __('Required field') %></p>
         </div>
 
         <div class="field">
-         <button type="submit" class="button button-primary" name="btnSubmit" id="btnSubmit">Submit</button>
+         <button type="submit" class="button button-primary" name="btnSubmit" id="btnSubmit"><%= __('Submit') %></button>
         </div>
       </div>
     </form>

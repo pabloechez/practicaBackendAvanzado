@@ -5,5 +5,18 @@
 	"Login": "Login",
 	"Please login to access": "Please login to access",
 	"Admin": "Admin",
-	"Create ad": "Create ad"
+	"Create ad": "Create ad",
+	"Logout": "Logout",
+	"Tags": "Tags",
+	"Name": "Name",
+	"Sale": "Sale",
+	"Yes": "Yes",
+	"No": "No",
+	"Price": "Price",
+	"Submit": "Submit",
+	"comma separator": "comma separator",
+	"Password": "Password",
+	"Required field": "Required field",
+	"Enter a valid email": "Enter a valid email",
+	"Wrong credentials": "Wrong credentials"
 }

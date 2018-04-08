@@ -8,7 +8,7 @@ class LoginController{
 
     //GET /
     index(req, res, next){
-        res.locals.email  =process.env.NODE_ENV === 'development' ? 'admin@example.com' : '';
+        res.locals.email  =process.env.NODE_ENV === 'development' ? 'user@example.com' : '';
         res.locals.error = '';
 
        res.render('pages/login');
@@ -27,7 +27,7 @@ class LoginController{
 
         // Comprobar usuario encontrado y verificar la clave del usuario
         if (!user || !await bcrypt.compare(password, user.password)) {
-            res.locals.error = 'Credenciales incorrectas';
+            res.locals.error = res.__('Wrong credentials');
             res.render('pages/login');
             return;
         }
