@@ -1,0 +1,14 @@
+{
+  "apps":[
+    {
+      "name": "service",
+      "script": "services/thumbnailService.js",
+      "watch": "services/thumbnailService.js"
+    },
+    {
+      "name": "client",
+      "script": "routes/apiv1/anuncios.js",
+      "watch": "routes/apiv1/anuncios.js"
+    }
+  ]
+}

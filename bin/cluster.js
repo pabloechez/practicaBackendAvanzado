@@ -4,6 +4,9 @@
  * Module dependencies.
  */
 
+//carga de variables de entorno desde .env
+require('dotenv').config();
+
 var app = require('../app');
 var debug = require('debug')('nodepop:server');
 var http = require('http');

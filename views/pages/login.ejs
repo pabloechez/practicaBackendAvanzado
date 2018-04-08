@@ -8,7 +8,7 @@
   <p><%= __('Please login to access') %></p>
   <article>
 
-    <form  method="post">
+    <form  method="post" novalidate>
       <div class="fields">
         <div class="field">
           <label for="email">Email</label>
@@ -16,16 +16,58 @@
         </div>
         <div class="field">
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password">
+          <input type="password" name="password" id="password" placeholder="Password" required>
         </div>
         <div class="field">
-         <button type="submit" class="button button-primary">Submit</button>
+         <button type="submit" name="btnSubmit" id="btnSubmit" class="button button-primary">Submit</button>
         </div>
       </div>
     </form>
-    <p class="error"><%= error %></p>
+    <p class="text-error"><%= error %></p>
 
 
   </article>
 
 </section>
+
+<script>
+    /*=====================================================================
+    Validación
+    =======================================================================*/
+
+    //variables
+    const form = document.querySelector('form');
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    //validación
+    form.addEventListener("submit", function(event) {
+
+        var regex = /[A-Za-z0-9\.\+]+@[A-Za-z0-9]+\.[A-Za-z0-9\.]+/;
+        var resultEmailValidation = regex.test(emailInput.value);
+        var submitButton = document.getElementById("btnSubmit");
+
+
+        checkError(resultEmailValidation === false,emailInput,event);
+        checkError(passwordInput.checkValidity() === false,passwordInput,event);
+
+        event.preventDefault();
+
+        if (document.querySelector('input.error') == null) {
+            submitButton.setAttribute("disabled", "");
+            form.submit();
+        }
+
+    });
+
+    function checkError(sentence,item,event){
+        if (sentence) {
+            item.focus();
+            item.classList.add("error");
+            event.preventDefault();
+            return false;
+        }
+        item.classList.remove("error");
+    }
+
+</script>

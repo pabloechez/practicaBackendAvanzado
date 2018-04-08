@@ -4,6 +4,10 @@ const express = require('express');
 const router = express.Router();
 
 const Anuncio= require('../../models/Anuncio');
+const upload = require('../../lib/uploadConfig');
+const Jimp = require("jimp");
+const path = require('path');
+const cote = require('cote');
 
 
 router.get('/', async(req, res, next)=>{
@@ -80,22 +84,42 @@ router.get('/tags', async(req, res, next)=>{
       }   
 });
 
-// Añadir un anuncio
-router.post('/', (req, res, next) => {
-  
+router.post('/',  upload.single('imagen'), (req, res, next) => {
+
     const data = req.body;
-    
-    // creamos documento de agente en memoria
+    console.log('upload:', req.file);
+    data.foto=req.file.filename;
+
+    data.thumbnail='thumbnail-'+data.foto;
+
+    if(req.body.venta==1){
+        data.venta=true;
+    }else{
+        data.venta=false;
+    }
+
+    data.tags= req.body.tags.split(",");
+
+    //console.log(data);
     const anuncio = new Anuncio(data);
-    
-    // lo persistimos en la base de datos
-    anuncio.save((err, anuncioGuardado) => { // .save es método de instancia
-      if (err) {
-        next(err);
-        return;
-      }
-      res.json({ success: true, result: anuncioGuardado });
+    anuncio.save((err, anuncioGuardado) => {
+        if (err) {
+            next(err);
+            return;
+        }
+        //res.json({ success: true, result: anuncioGuardado });
+        res.redirect('/admin');
     });
-  });
+
+    //cliente de creacion de thumbnail
+    const requester = new cote.Requester({ name: 'image thumbail client'});
+
+    requester.send({
+        type: 'thumbnail',
+        image: data.foto,
+        name: data.foto,
+    });
+
+});
 
 module.exports = router;

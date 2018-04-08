@@ -1,0 +1,88 @@
+<% layout('layout') -%>
+
+<section id="page__admin">
+
+
+  <h1><%= __('Admin') %></h1>
+
+  <p><%= __('Create ad') %></p>
+  <article>
+
+    <form  enctype="multipart/form-data" action="/apiv1/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YWJmYjI5Y2I2NjkyZDM4YTAzZDczNDgiLCJpYXQiOjE1MjMwMjIzMTAsImV4cCI6MTUyMzE5NTExMH0.VEkiXApYc_5VrYcnC5iRgwSVVjg9rmceJK6z9TcgN1I" method="post" novalidate>
+      <div class="fields">
+        <div class="field">
+          <input type="file" name="imagen" id="imagen" required>
+        </div>
+        <div class="field">
+          <label for="text">Nombre</label>
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+        </div>
+        <div class="field">
+          <label for="venta">Venta</label>
+          <span>Si</span>
+          <input type="radio" name="venta" id="venta" placeholder="Venta"  value="1" checked>
+          <span>No</span>
+          <input type="radio" name="venta" id="venta1" placeholder="Venta"  value="0">
+        </div>
+        <div class="field">
+          <label for="text">Precio</label>
+          <input type="text" name="precio" id="precio" placeholder="Precio" required>
+        </div>
+        <div class="field">
+          <label for="text">Tags <span class="font-size-xsmall">(separado por comas)</span></label>
+          <input type="text" name="tags" id="tags" placeholder="Tags"  required>
+        </div>
+
+        <div class="field">
+         <button type="submit" class="button button-primary" name="btnSubmit" id="btnSubmit">Submit</button>
+        </div>
+      </div>
+    </form>
+
+
+  </article>
+
+</section>
+
+<script>
+    /*=====================================================================
+    Validación
+    =======================================================================*/
+
+    //variables
+    const form = document.querySelector('form');
+    const nombreInput = document.getElementById("nombre");
+    const imagenInput = document.getElementById("imagen");
+    const precioInput = document.getElementById("precio");
+    const tagsInput = document.getElementById("tags");
+
+    //validación
+    form.addEventListener("submit", function(event) {
+
+        var submitButton = document.getElementById("btnSubmit");
+
+        checkError(imagenInput.checkValidity() === false,imagenInput,event);
+        checkError(nombreInput.checkValidity() === false,nombreInput,event);
+        checkError(precioInput.checkValidity() === false,precioInput,event);
+        checkError(tagsInput.checkValidity() === false,tagsInput,event);
+
+        event.preventDefault();
+
+        if (document.querySelector('input.error') == null) {
+            submitButton.setAttribute("disabled", "");
+            form.submit();
+        }
+
+    });
+
+    function checkError(sentence,item,event){
+        if (sentence) {
+            item.focus();
+            item.classList.add("error");
+            event.preventDefault();
+            return false;
+        }
+        item.classList.remove("error");
+    }
+
+</script>

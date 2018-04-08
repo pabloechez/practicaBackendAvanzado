@@ -9,6 +9,8 @@ var engine = require('ejs-locals');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
+const jwtAuth = require('./lib/jwtAuth');
+
 // conectamos la base de datos
 const conn = require('./lib/connectMongoose');
 
@@ -31,17 +33,23 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 //middleware de estáticos
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 //configurar multiidioma
 const i18n = require('./lib/i18nConfigure')();
 app.use(i18n.init);
 
+
+const loginController = require('./routes/loginController');
+
 /**
  * Middlewares de mi api
  */
-app.use('/apiv1/anuncios', require('./routes/apiv1/anuncios'));
+app.use('/api/anuncios',jwtAuth(), require('./routes/apiv/anuncios'));
+app.use('/api/authenticate', loginController.postLoginJWT);
 
 //middleware de control de sessiones
 app.use(session({
@@ -59,7 +67,6 @@ app.use(session({
 /**
  * Middlewares de mi apliación web
  */
-const loginController = require('./routes/loginController');
 app.post('/login', loginController.post);
 app.use('/login', loginController.index);
 app.use('/logout', loginController.logout);
@@ -67,6 +74,8 @@ app.use('/logout', loginController.logout);
 app.use('/',      require('./routes/index'));
 app.use('/lang',  require('./routes/lang'));
 app.use('/users', require('./routes/users'));
+app.use('/admin', require('./routes/admin'));
+
 
 
 // catch 404 and forward to error handler

@@ -6,6 +6,7 @@
             "venta": true,
             "precio": 230.15,
             "foto": "bici.jpg",
+            "thumbnail": "thumbnail-bici.jpg",
             "tags": [ "lifestyle", "motor"]
         },
         {
@@ -13,6 +14,7 @@
             "venta": false,
             "precio": 30.00,
             "foto": "nexus.jpg",
+            "thumbnail": "thumbnail-nexus.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -20,6 +22,7 @@
             "venta": false,
             "precio": 1300.00,
             "foto": "iphonex.jpg",
+            "thumbnail": "thumbnail-iphonex.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -27,6 +30,7 @@
             "venta": false,
             "precio": 800.00,
             "foto": "iphone8.jpg",
+            "thumbnail": "thumbnail-iphone8.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -34,6 +38,7 @@
             "venta": false,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -41,6 +46,7 @@
             "venta": false,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -48,6 +54,7 @@
             "venta": false,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -55,6 +62,7 @@
             "venta": false,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -62,6 +70,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -69,6 +78,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -76,6 +86,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -83,6 +94,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -90,6 +102,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -97,6 +110,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -104,6 +118,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "mobile"]
         },
         {
@@ -111,6 +126,7 @@
             "venta": true,
             "precio": 50.00,
             "foto": "iphone.png",
+            "thumbnail": "thumbnail-iphone.jpg",
             "tags": [ "lifestyle", "motor"]
         },
         {
@@ -118,6 +134,7 @@
             "venta": false,
             "precio": 350.20,
             "foto": "bici2.jpg",
+            "thumbnail": "thumbnail-bici2.jpg",
             "tags": [ "lifestyle", "motor"]
         },
 
@@ -126,6 +143,7 @@
             "venta": false,
             "precio": 1000.99,
             "foto": "ipad.jpg",
+            "thumbnail": "thumbnail-ipad.jpg",
             "tags": [ "motor"]
         }
 
