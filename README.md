@@ -1,6 +1,6 @@
 # Práctica Backend Avanzado
 
-Práctica de KeepCoding para el módulo de fundamentos de Node
+Práctica de KeepCoding para el módulo de backend avanzado
 
 ## Instrucciones
 ----
@@ -33,7 +33,20 @@ npm run createDB
 
     ````
     npm start
-    ```` 
+    ````
+
+## Hacer login
+----
+/api/authenticate para hacer login y devolver un token JWT
+
+usuario: user@example.com
+contraseña: 1234
+
+## Insertar anuncio
+----
+
+Enviamos por post los campos: nombre, venta, precio, foto y tags a /api/anuncios con el token obtenido
+
 
 ## Peticiones a la API
 ----
@@ -99,10 +112,6 @@ Valores true o false. Ejemplo:
 ````
 /apiv1/anuncios?start=numero&limit=numero
 ````
-
-### Insertar anuncio
-
-Enviamos por post los campos: nombre, venta, precio, foto y tags
 
 
 ## Ayudas
