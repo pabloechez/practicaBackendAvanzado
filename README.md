@@ -5,10 +5,8 @@ Práctica de KeepCoding para el módulo de backend avanzado
 ### Urls
 ----
 
-ec2-18-219-57-183.us-east-2.compute.amazonaws.com
-nodepop.pablo.ninja
-
 pablo.ninja
+
 18.219.57.183
 
 ## Instrucciones
