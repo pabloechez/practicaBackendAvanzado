@@ -9,6 +9,14 @@ pablo.ninja
 
 18.219.57.183
 
+### Login
+----
+
+usuario: user@example.com
+
+contraseña: 1234
+
+
 ## Instrucciones
 ----
 
@@ -42,11 +50,12 @@ npm run createDB
     npm start
     ````
 
-## Hacer login
+## Token
 ----
 /api/authenticate para hacer login y devolver un token JWT
 
 usuario: user@example.com
+
 contraseña: 1234
 
 ## Insertar anuncio
